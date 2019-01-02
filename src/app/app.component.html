@@ -19,5 +19,16 @@
     <!-- String Interpolation {{}}  -->
     <p> {{ person.greet() }} </p>
   </div>
+  <div>
+    <!-- Directiva Estructurales -->
+    <!-- *ngFor  y *ngIf -->
+    <ul>
+      <ng-container  *ngFor="let elem of list">
+        <li *ngIf="elem.active">
+          {{ elem.name }}, Número de Visitas: {{ elem.visits }}
+        </li>
+      </ng-container>
+    </ul>
+  </div>
 </div>
 
