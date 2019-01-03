@@ -19,7 +19,7 @@ class Person {
 class Place {
     name: string;
     active: boolean;
-    visits: number
+    visits: number;
     constructor(name: string, active: boolean = true) {
         this.name = name;
         this.active = active;
@@ -33,21 +33,23 @@ class Place {
 })
 export class AppComponent {
   title = 'Platzi Square';
-  ready: boolean = false;
+  ready = false;
   person: Person = new Person('Eduardo', 'Denis', 26);
   list: Place[] = [new Place('A', true), new Place('B', true), new Place('C', true)]
                         .map((place, index) => {
                           place.visits = Math.floor(Math.random() * 100);
-                          return place
+                          return place;
                         });
+  lat = 51.678418;
+  lng = 7.809007;
 
-  constructor(){
+  constructor() {
     setTimeout(() => {
       this.ready = true;
-    }, 3000)
+    }, 3000);
   }
 
-  doSomething(){
+  doSomething() {
     alert(this.list);
   }
 }
