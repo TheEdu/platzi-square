@@ -8,6 +8,10 @@ import { AgmCoreModule } from '@agm/core';
 import { ResaltarDirective } from './directives/resaltar.directive';
 import { ContarClicksDirective } from './directives/contar-clicks.directive';
 
+// Material Angular
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MyOwnCustomMaterialModule } from './material.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +23,9 @@ import { ContarClicksDirective } from './directives/contar-clicks.directive';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBGhvrQh2edYQi7AXdDYCA71Lb_YehPXTk'
-    })
+    }),
+    BrowserAnimationsModule,
+    MyOwnCustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
