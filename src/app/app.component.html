@@ -42,7 +42,8 @@
     <ul>
       <ng-container  *ngFor="let place of places; let i = index;" [ngSwitch]="place.closeness.id">
         <li [ngStyle]="{'color': (place.active) ? 'black' : 'gray'}"
-            [ngClass]="{'even-index': (i+1) % 2 === 0}" >
+            [ngClass]="{'even-index': (i+1) % 2 === 0}"
+            [resaltar]="place.plan" >
           {{ place.name }} -
           <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
           <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>

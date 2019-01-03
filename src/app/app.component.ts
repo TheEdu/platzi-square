@@ -22,11 +22,13 @@ class Place {
     closeness: object;
     distance: number;
     visits: number;
-    constructor(name: string, active: boolean = true, closeness: object, distance: number = 1) {
+    plan: string;
+    constructor(name: string, active: boolean = true, closeness: object, distance: number = 1, plan: string = "sin pagar") {
         this.name = name;
         this.active = active;
         this.closeness = closeness;
         this.distance = distance;
+        this.plan = plan;
         this.visits = 0;
     }
 }
@@ -48,11 +50,11 @@ const closeness = [
 
 
 const places = [
-  new Place('A',  true, closeness[0], 1),
+  new Place('A',  true, closeness[0], 1, "pagado"),
   new Place('B',  true, closeness[0], 2.5),
-  new Place('C', false, closeness[1], 7.8),
+  new Place('C', false, closeness[1], 7.8, "pagado"),
   new Place('D',  true, closeness[1], 9.2),
-  new Place('E',  true, closeness[2], 123),
+  new Place('E',  true, closeness[2], 123, "pagado"),
   new Place('F', false, closeness[2], 97)
 ]
 
