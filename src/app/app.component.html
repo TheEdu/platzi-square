@@ -3,15 +3,14 @@
   <h1>
     Bienvenido a {{title}}!
   </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
   <div>
-    <!-- Property Binding [] -->
-    <!-- Event Binding ()  -->
-    <button [disabled]="!ready" (click)="doSomething()">
-      Click me!
-    </button>
+    <!-- this creates a google map on the page with the given lat/lng from -->
+    <!-- the component as the initial center of the map: -->
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
   </div>
-  <div>
+  <div class="p-top-10">
     <!-- Two Ways Data Binding  -->
     <input type="text" [(ngModel)]="person.firstName">
     <input type="text" [(ngModel)]="person.lastName">
@@ -20,22 +19,37 @@
     <p> {{ person.greet() }} </p>
   </div>
   <div>
+    <!-- Property Binding [] -->
+    <!-- Event Binding ()  -->
+    <button [disabled]="!ready" (click)="doSomething()">
+      Click me!
+    </button>
+  </div>
+  <div>
     <!-- Directiva Estructurales -->
     <!-- *ngFor  y *ngIf -->
     <ul>
-      <ng-container  *ngFor="let elem of list">
-        <li *ngIf="elem.active">
-          {{ elem.name }}, Número de Visitas: {{ elem.visits }}
+      <ng-container  *ngFor="let place of places">
+        <li *ngIf="place.active">
+          {{ place.name }}, Número de Visitas: {{ place.visits }}
         </li>
       </ng-container>
     </ul>
   </div>
   <div>
-    <!-- this creates a google map on the page with the given lat/lng from -->
-    <!-- the component as the initial center of the map: -->
-    <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-    </agm-map>
+    <!-- Directiva Estructurales -->
+    <!-- [ngStyle], [ngClass] y [ngSwitch] *ngSwitchCase -->
+    <ul>
+      <ng-container  *ngFor="let place of places; let i = index;" [ngSwitch]="place.closeness.id">
+        <li [ngStyle]="{'color': (place.active) ? 'black' : 'gray'}"
+            [ngClass]="{'even-index': (i+1) % 2 === 0}" >
+          {{ place.name }} -
+          <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
+          <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>
+          <span *ngSwitchCase="3" [ngStyle]="{'color': 'red'}">   {{ place.closeness.text }} </span>
+        </li>
+      </ng-container>
+    </ul>
   </div>
 </div>
 

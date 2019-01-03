@@ -13,7 +13,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'KEY'
+      apiKey: 'AIzaSyBGhvrQh2edYQi7AXdDYCA71Lb_YehPXTk'
     })
   ],
   providers: [],

@@ -1,3 +1,11 @@
 agm-map {
-    height: 300px;
+    height: 250px;
+}
+
+.even-index {
+  background-color: #0000ff29;
+}
+
+.p-top-10 {
+  padding-top: 10px;
 }
