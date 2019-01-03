@@ -41,14 +41,16 @@
     <!-- [ngStyle], [ngClass] y [ngSwitch] *ngSwitchCase -->
     <ul>
       <ng-container  *ngFor="let place of places; let i = index;" [ngSwitch]="place.closeness.id">
-        <li [ngStyle]="{'color': (place.active) ? 'black' : 'gray'}"
-            [ngClass]="{'even-index': (i+1) % 2 === 0}"
-            [resaltar]="place.plan" >
-          {{ place.name }} -
-          <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
-          <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>
-          <span *ngSwitchCase="3" [ngStyle]="{'color': 'red'}">   {{ place.closeness.text }} </span>
-        </li>
+        <a appContarClicks>
+          <li [ngStyle]="{'color': (place.active) ? 'black' : 'gray'}"
+              [ngClass]="{'even-index': (i+1) % 2 === 0}"
+              [resaltar]="place.plan" >
+            {{ place.name }} -
+            <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
+            <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>
+            <span *ngSwitchCase="3" [ngStyle]="{'color': 'red'}">   {{ place.closeness.text }} </span>
+          </li>
+        </a>
       </ng-container>
     </ul>
   </div>
