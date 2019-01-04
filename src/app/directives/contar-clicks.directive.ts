@@ -1,14 +1,14 @@
 import { Directive, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
-  selector: 'li[appContarClicks]'
+  selector: '[appContarClicks]'
 })
 export class ContarClicksDirective {
 
   constructor() { }
 
   numberOfClicks = 0;
-  @HostBinding('style.opacity') opacity: number = .5;
+  @HostBinding('style.opacity') opacity = .5;
 
   @HostListener('click', ['$event.target'])
   onClick(btn) {

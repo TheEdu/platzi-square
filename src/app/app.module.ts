@@ -12,11 +12,16 @@ import { ContarClicksDirective } from './directives/contar-clicks.directive';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from './material.module';
 
+import { LugarListComponent } from './components/lugares/lugar-list/lugar-list.component';
+import { LugarDetailComponent } from './components/lugares/lugar-detail/lugar-detail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ResaltarDirective,
-    ContarClicksDirective
+    ContarClicksDirective,
+    LugarListComponent,
+    LugarDetailComponent
   ],
   imports: [
     BrowserModule,
