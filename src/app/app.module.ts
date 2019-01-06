@@ -12,8 +12,10 @@ import { ContarClicksDirective } from './directives/contar-clicks.directive';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from './material.module';
 
+// Custom Components
 import { LugarListComponent } from './components/lugares/lugar-list/lugar-list.component';
 import { LugarDetailComponent } from './components/lugares/lugar-detail/lugar-detail.component';
+import { EjercicioDirectivasComponent } from './components/ejercicios/ejercicio-directivas.component';
 
 // Routing
 import { Routing } from './app.routing';
@@ -24,7 +26,8 @@ import { Routing } from './app.routing';
     ResaltarDirective,
     ContarClicksDirective,
     LugarListComponent,
-    LugarDetailComponent
+    LugarDetailComponent,
+    EjercicioDirectivasComponent
   ],
   imports: [
     BrowserModule,

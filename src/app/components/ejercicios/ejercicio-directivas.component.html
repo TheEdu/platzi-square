@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center; padding: 20px;">
+        <div class="p-top-10">
+            <!-- Two Ways Data Binding  -->
+            <input type="text" [(ngModel)]="person.firstName">
+            <input type="text" [(ngModel)]="person.lastName">
+    
+            <!-- String Interpolation {{}}  -->
+            <p> {{ person.greet() }} </p>
+        </div>
+        <div>
+            <!-- Property Binding [] -->
+            <!-- Event Binding ()  -->
+            <button [disabled]="!ready" (click)="doSomething()">
+            Click me!
+            </button>
+        </div>
+        <div>
+            <!-- Directiva Estructurales -->
+            <!-- *ngFor  y *ngIf -->
+            <ul>
+            <ng-container  *ngFor="let place of places">
+                <li *ngIf="place.active">
+                {{ place.name }}, Número de Visitas: {{ place.visits }}
+                </li>
+            </ng-container>
+            </ul>
+        </div>
+        <div>
+            <!-- Directiva Estructurales -->
+            <!-- [ngStyle], [ngClass] y [ngSwitch] *ngSwitchCase -->
+            <ul>
+            <ng-container  *ngFor="let place of places; let i = index;" [ngSwitch]="place.closeness.id">
+                <a>
+                <li [ngStyle]="{'color': (place.active) ? 'black' : 'gray'}"
+                    [ngClass]="{'even-index': (i+1) % 2 === 0}"
+                    [resaltar]="place.plan"
+                    appContarClicks >
+                    {{ place.name }} -
+                    <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
+                    <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>
+                    <span *ngSwitchCase="3" [ngStyle]="{'color': 'red'}">   {{ place.closeness.text }} </span>
+                </li>
+                </a>
+            </ng-container>
+            </ul>
+        </div>
+    </div>

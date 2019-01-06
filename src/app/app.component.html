@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row class="pr-0">
-    <span>{{title}}</span>
+    <span class="menu-span" routerLink="/">{{title}}</span>
     <span class="example-spacer"></span>
     <ul>
       <li routerLinkActive="li-active" [routerLinkActiveOptions]="{ exact: true }">
         <span class="menu-span pl-5 pr-5" routerLink="/">Lista</span>
       </li>
       <li routerLinkActive="li-active">
-        <span class="menu-span pl-5 pr-5" routerLink="/detalle/1">Detalle</span>
+        <span class="menu-span pl-5 pr-5" routerLink="/ejercicio/directivas">Ejer. Direc.</span>
       </li>
     </ul>
   </mat-toolbar-row>
