@@ -17,7 +17,8 @@
                     <mat-list-item role="listitem" [ngStyle]="{'color': (place.active) ? 'black' : 'gray'}"
                         [ngClass]="{'cursor-pointer': true}"
                         [resaltar]="place.plan"
-                        routerLink = "/detalle/{{place.id}}">
+                        routerLink = "/detalle/{{place.id}}"
+                        [queryParams]="{action:'buscar'}">
                         {{ place.name }} -
                         <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
                         <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>

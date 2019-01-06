@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 400px;
+    margin: auto;
+}
+
+.no-bullet {
+    list-style: none;
+    padding-left: 7px;
+}
