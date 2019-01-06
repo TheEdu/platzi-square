@@ -10,8 +10,13 @@ agm-map {
   padding-top: 10px;
 }
 
-.example-icon {
+.menu-span {
   padding: 0 14px;
+  border-left: solid 1px #fff;
+}
+
+.menu-span:hover {
+  cursor: pointer;
 }
 
 .example-spacer {

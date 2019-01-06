@@ -2,10 +2,12 @@
   <mat-toolbar-row>
     <span>{{title}}</span>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon">crop_din</mat-icon>
+    <span class="menu-span" routerLink="/">Lista</span>
+    <span class="menu-span" routerLink="/detalle">Detalle</span>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<app-lugar-list></app-lugar-list>
-<app-lugar-detail></app-lugar-detail>
+<router-outlet></router-outlet>
+<!-- <app-lugar-list></app-lugar-list>
+<app-lugar-detail></app-lugar-detail> -->
 

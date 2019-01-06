@@ -15,6 +15,9 @@ import { MyOwnCustomMaterialModule } from './material.module';
 import { LugarListComponent } from './components/lugares/lugar-list/lugar-list.component';
 import { LugarDetailComponent } from './components/lugares/lugar-detail/lugar-detail.component';
 
+// Routing
+import { Routing } from './app.routing';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,8 @@ import { LugarDetailComponent } from './components/lugares/lugar-detail/lugar-de
       apiKey: 'AIzaSyBGhvrQh2edYQi7AXdDYCA71Lb_YehPXTk'
     }),
     BrowserAnimationsModule,
-    MyOwnCustomMaterialModule
+    MyOwnCustomMaterialModule,
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]
