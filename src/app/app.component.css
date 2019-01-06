@@ -6,17 +6,43 @@ agm-map {
   background-color: #0000ff29;
 }
 
-.p-top-10 {
-  padding-top: 10px;
+.pl-5 {
+  padding-left: 7px;
 }
 
-.menu-span {
-  padding: 0 14px;
-  border-left: solid 1px #fff;
+.pr-5 {
+  padding-right: 7px;
+}
+
+.pr-0 {
+  padding-right: 0px;
 }
 
 .menu-span:hover {
   cursor: pointer;
+}
+
+.menu-span:focus {
+  border: 0px;
+  outline: 0;
+}
+
+ul li {
+  /* display:inline; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-left: solid 1px #fff;
+}
+
+ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.li-active {
+  background-color: #747be2;
 }
 
 .example-spacer {

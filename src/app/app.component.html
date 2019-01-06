@@ -1,9 +1,15 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
+  <mat-toolbar-row class="pr-0">
     <span>{{title}}</span>
     <span class="example-spacer"></span>
-    <span class="menu-span" routerLink="/">Lista</span>
-    <span class="menu-span" routerLink="/detalle">Detalle</span>
+    <ul>
+      <li routerLinkActive="li-active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="menu-span pl-5 pr-5" routerLink="/">Lista</span>
+      </li>
+      <li routerLinkActive="li-active">
+        <span class="menu-span pl-5 pr-5" routerLink="/detalle">Detalle</span>
+      </li>
+    </ul>
   </mat-toolbar-row>
 </mat-toolbar>
 
