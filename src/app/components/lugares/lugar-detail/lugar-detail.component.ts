@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 class Person {
     firstName: string;
@@ -27,7 +28,8 @@ export class LugarDetailComponent {
   ready = false;
   person: Person = person;
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
+    console.log(this.route.snapshot.params['id']);
     setTimeout(() => {
       this.ready = true;
     }, 3000);

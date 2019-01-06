@@ -15,9 +15,10 @@
             <mat-list role="list">
                 <ng-container  *ngFor="let place of places; let i = index;" [ngSwitch]="place.closeness.id">
                     <mat-list-item role="listitem" [ngStyle]="{'color': (place.active) ? 'black' : 'gray'}"
-                        [ngClass]="{'even-index': (i+1) % 2 === 0}"
+                        [ngClass]="{'even-index': (i+1) % 2 === 0, 'cursor-pointer': true}"
                         [resaltar]="place.plan"
-                        appContarClicks >
+                        appContarClicks
+                        routerLink = "/detalle/{{place.id}}">
                         {{ place.name }} -
                         <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
                         <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>

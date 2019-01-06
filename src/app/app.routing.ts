@@ -4,7 +4,7 @@ import { LugarDetailComponent } from './components/lugares/lugar-detail/lugar-de
 
 const APP_ROUTES: Routes = [
     { path: '', component: LugarListComponent, pathMatch: 'full' },
-    { path: 'detalle', component: LugarDetailComponent }
+    { path: 'detalle/:id', component: LugarDetailComponent }
 ];
 
 export const Routing = RouterModule.forRoot(APP_ROUTES);
