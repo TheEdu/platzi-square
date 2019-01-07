@@ -13,10 +13,9 @@ export class LugarListComponent {
   lng = 7.809007;
 
   constructor( private lugaresService: LugaresService ) {
-    this.places = lugaresService.getLugares()
-                                .map((place, index) => {
-                                  place.visits = Math.floor(Math.random() * 100);
-                                  return place;
-                                });
-  }
+    lugaresService.getLugares()
+                  .subscribe( places => {
+                    debugger;
+                    this.places = places;
+                  });
 }

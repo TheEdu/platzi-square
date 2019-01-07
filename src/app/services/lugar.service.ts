@@ -10,7 +10,8 @@ export class LugaresService {
     constructor(private afDB:AngularFireDatabase){}
 
     public getLugares() {
-        return this.places;
+        return this.afDB.list('places/').valueChanges();
+        // return this.places;
     }
 
     public getClosenessTypes() {
@@ -20,6 +21,11 @@ export class LugaresService {
     public buscarLugar( id ) {
         return this.places.find( p => p.id === +id ) || {};
     }
+
+    public buscarClosenessType( id ) {
+        return this.closenessTypes.find( c => c.id === +id ) || {};
+    }
+
     public guardarLugar( place ) {
         const id = +Date.now();
         const p = new Place(
@@ -27,12 +33,12 @@ export class LugaresService {
             place.name,  
             place.description, 
             true, 
-            closenessTypes[0],
+            this.buscarClosenessType(place.closeness),
             place.distance, 
             place.plan
         );
         console.log(p);
         this.places.push(p);
-        this.afDB.database.ref('places/1').set(p);
+        this.afDB.database.ref(`places/${p.id}`).set(p);
     }
 }
