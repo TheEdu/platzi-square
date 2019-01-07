@@ -1,0 +1,44 @@
+<mat-card class="example-card">
+    <mat-card-header>
+            <mat-card-title> <b> Crear Lugar </b> </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form action="">
+            
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Nombre" [(ngModel)]="place.name" name="name">
+                </mat-form-field>
+            </div>
+
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Descripcion" [(ngModel)]="place.description" name="description">
+                </mat-form-field>
+            </div>
+
+            <mat-form-field>
+              <mat-select placeholder="Cercania" [(ngModel)]="place.closeness" name="closeness">
+                <mat-option *ngFor="let closenessType of closenessTypes" [value]="closenessType.id">
+                  {{closenessType.text}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Distancia" [(ngModel)]="place.distance" name="distance">
+                </mat-form-field>
+            </div>
+
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Plan" [(ngModel)]="place.plan" name="plan">
+                </mat-form-field>
+            </div>
+
+            <button mat-raised-button color="primary" (click)="onSubmit()"> Enviar </button>
+
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -11,3 +11,9 @@ agm-map {
 .cursor-pointer:hover {
     cursor: pointer;
 }
+
+.title-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

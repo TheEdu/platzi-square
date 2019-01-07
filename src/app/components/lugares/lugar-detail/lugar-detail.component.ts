@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import places from '../../../utils/mocks/places';
 import { LugaresService } from '../../../services/lugar.service';
 
 @Component({

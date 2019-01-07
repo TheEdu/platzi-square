@@ -15,6 +15,7 @@ import { MyOwnCustomMaterialModule } from './material.module';
 // Custom Components
 import { LugarListComponent } from './components/lugares/lugar-list/lugar-list.component';
 import { LugarDetailComponent } from './components/lugares/lugar-detail/lugar-detail.component';
+import { LugarCrearComponent } from './components/lugares/lugar-crear/lugar-crear.component';
 import { EjercicioDirectivasComponent } from './components/ejercicios/ejercicio-directivas.component';
 
 // Routing
@@ -24,6 +25,21 @@ import { ContactScreenComponent } from './components/contactos/contact-screen.co
 // Services
 import { LugaresService } from './services/lugar.service';
 
+// FireBae
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
+const firebase =  {
+  apiKey: "AIzaSyDaTOC9fCCpfZ5nyXLEoG99BBcwv6lr3k0",
+  authDomain: "platzi-square-1546451411606.firebaseapp.com",
+  databaseURL: "https://platzi-square-1546451411606.firebaseio.com",
+  projectId: "platzi-square-1546451411606",
+  storageBucket: "platzi-square-1546451411606.appspot.com",
+  messagingSenderId: "1059538345571"
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +48,8 @@ import { LugaresService } from './services/lugar.service';
     LugarListComponent,
     LugarDetailComponent,
     EjercicioDirectivasComponent,
-    ContactScreenComponent
+    ContactScreenComponent,
+    LugarCrearComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +59,10 @@ import { LugaresService } from './services/lugar.service';
     }),
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
-    Routing
+    Routing,
+    AngularFireModule.initializeApp(firebase, 'platzi-square'), // imports firebase/app needed for everything
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireDatabaseModule
   ],
   providers: [
     LugaresService

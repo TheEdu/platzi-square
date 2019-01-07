@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import places from './../../utils/mocks/places';
+import { places } from './../../utils/mocks/places';
 
 class Person {
     firstName: string;
