@@ -19,6 +19,7 @@ import { EjercicioDirectivasComponent } from './components/ejercicios/ejercicio-
 
 // Routing
 import { Routing } from './app.routing';
+import { ContactScreenComponent } from './components/contactos/contact-screen.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Routing } from './app.routing';
     ContarClicksDirective,
     LugarListComponent,
     LugarDetailComponent,
-    EjercicioDirectivasComponent
+    EjercicioDirectivasComponent,
+    ContactScreenComponent
   ],
   imports: [
     BrowserModule,
