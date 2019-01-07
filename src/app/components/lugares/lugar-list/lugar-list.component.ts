@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import places from './../../../utils/mocks/places';
+import { LugaresService } from '../../../services/lugar.service';
 
 @Component({
   selector: 'app-lugar-list',
@@ -8,10 +8,15 @@ import places from './../../../utils/mocks/places';
 })
 export class LugarListComponent {
   title = 'Platzi Square';
-  places: Object[] = places.map((place, index) => {
-                          place.visits = Math.floor(Math.random() * 100);
-                          return place;
-                        });
+  places: any[];
   lat = 51.678418;
   lng = 7.809007;
+
+  constructor( private lugaresService: LugaresService ) {
+    this.places = lugaresService.getLugares()
+                                .map((place, index) => {
+                                  place.visits = Math.floor(Math.random() * 100);
+                                  return place;
+                                });
+  }
 }

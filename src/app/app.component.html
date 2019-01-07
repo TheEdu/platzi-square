@@ -3,14 +3,14 @@
     <span class="menu-span" routerLink="/">{{title}}</span>
     <span class="example-spacer"></span>
     <ul>
-      <li routerLinkActive="li-active" [routerLinkActiveOptions]="{ exact: true }">
-        <span class="menu-span pl-5 pr-5" routerLink="/">Lista</span>
+      <li routerLinkActive="li-active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">
+        <span class="menu-span pl-5 pr-5">Lista</span>
       </li>
-      <li routerLinkActive="li-active">
-        <span class="menu-span pl-5 pr-5" routerLink="/ejercicio/directivas">Ejer. Direc.</span>
+      <li routerLinkActive="li-active" routerLink="/ejercicio/directivas">
+        <span class="menu-span pl-5 pr-5">Ejer. Direc.</span>
       </li>
-      <li routerLinkActive="li-active">
-          <span class="menu-span pl-5 pr-5" routerLink="/contacto">Contacto</span>
+      <li routerLinkActive="li-active" routerLink="/contacto">
+          <span class="menu-span pl-5 pr-5">Contacto</span>
         </li>
     </ul>
   </mat-toolbar-row>

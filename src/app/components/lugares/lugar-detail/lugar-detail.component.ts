@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import places from '../../../utils/mocks/places';
+import { LugaresService } from '../../../services/lugar.service';
 
 @Component({
   selector: 'app-lugar-detail',
@@ -9,15 +10,14 @@ import places from '../../../utils/mocks/places';
 })
 export class LugarDetailComponent {
   detailId: number;
-  places: Object[] = places;
   place: Object = {};
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private lugaresService: LugaresService) {
     const action = this.route.snapshot.queryParams['action']; // forma de pasar valores por el Query String
     const detailId = this.route.snapshot.params['id']; // forma de pasar parametros por la url
-    const place = places.find( p => p.id === +detailId ) || {};
+
     this.detailId = detailId;
-    this.place = place;
-    console.log(action, this.place);
+    this.place = lugaresService.buscarLugar(detailId);
+    console.log(action, detailId, this.place);
   }
 }

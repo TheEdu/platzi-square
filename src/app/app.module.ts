@@ -21,6 +21,9 @@ import { EjercicioDirectivasComponent } from './components/ejercicios/ejercicio-
 import { Routing } from './app.routing';
 import { ContactScreenComponent } from './components/contactos/contact-screen.component';
 
+// Services
+import { LugaresService } from './services/lugar.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,9 @@ import { ContactScreenComponent } from './components/contactos/contact-screen.co
     MyOwnCustomMaterialModule,
     Routing
   ],
-  providers: [],
+  providers: [
+    LugaresService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
