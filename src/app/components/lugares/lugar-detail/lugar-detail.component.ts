@@ -16,7 +16,10 @@ export class LugarDetailComponent {
     const detailId = this.route.snapshot.params['id']; // forma de pasar parametros por la url
 
     this.detailId = detailId;
-    this.place = lugaresService.buscarLugar(detailId);
-    console.log(action, detailId, this.place);
+    lugaresService.buscarLugar(detailId)
+                  .subscribe((place) => {
+                    this.place = place;
+                    console.log(action, detailId, this.place);
+                  });
   }
 }

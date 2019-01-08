@@ -23,13 +23,14 @@
                 <ng-container  *ngFor="let place of places; let i = index;" [ngSwitch]="place.closeness.id">
                     <mat-list-item role="listitem" [ngStyle]="{'color': (place.active) ? 'black' : 'gray'}"
                         [ngClass]="{'cursor-pointer': true}"
-                        [resaltar]="place.plan"
-                        routerLink = "/detalle/{{place.id}}"
-                        [queryParams]="{action:'buscar'}">
-                        {{ place.name }} -
+                        [resaltar]="place.plan" >
+                        <span> {{ place.name }}:&nbsp; </span>
                         <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
                         <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>
                         <span *ngSwitchCase="3" [ngStyle]="{'color': 'red'}">   {{ place.closeness.text }} </span>
+                        <span> &nbsp;--> </span>
+                        <span class="space-x">  <a routerLink = "/detalle/{{place.id}}"> Ver </a> </span>
+                        <span class="space-x">  <a routerLink = "/editar/{{place.id}}"> Editar </a> </span>
                     </mat-list-item>
                 </ng-container>
             </mat-list>

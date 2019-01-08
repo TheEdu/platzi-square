@@ -10,7 +10,8 @@ const APP_ROUTES: Routes = [
     { path: 'detalle/:id', component: LugarDetailComponent },
     { path: 'ejercicio/directivas', component: EjercicioDirectivasComponent },
     { path: 'contacto', component: ContactScreenComponent },
-    { path: 'crear', component: LugarCrearComponent }
+    { path: 'crear', component: LugarCrearComponent },
+    { path: 'editar/:id', component: LugarCrearComponent }
 ];
 
 export const Routing = RouterModule.forRoot(APP_ROUTES);

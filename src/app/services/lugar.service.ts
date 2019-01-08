@@ -20,7 +20,8 @@ export class LugaresService {
     }
 
     public buscarLugar( id ) {
-        return this.places.find( p => p.id === +id ) || {};
+        return this.afDB.object(`places/${+id}`).valueChanges();
+        // return this.places.find( p => p.id === +id ) || {};
     }
 
     public buscarClosenessType( id ) {
@@ -28,7 +29,7 @@ export class LugaresService {
     }
 
     public guardarLugar( place ) {
-        const id = +Date.now();
+        const id = place.id ? +place.id : +Date.now();
         const p = new Place(
             id,
             place.name,  
@@ -43,9 +44,9 @@ export class LugaresService {
             place.lat,
             place.lng
         );
-        console.log(p);
-        this.places.push(p);
-        this.afDB.database.ref(`places/${p.id}`).set(p);
+        this.places.push(p); // store in memory
+        this.afDB.database.ref(`places/${p.id}`).set(p); // store in firebase
+        return this.afDB.object(`places/${p.id}`).valueChanges();
     }
 
     public obtenerGeoData(direccion){
