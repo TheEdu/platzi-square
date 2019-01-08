@@ -32,12 +32,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 const firebase =  {
-  apiKey: "AIzaSyDaTOC9fCCpfZ5nyXLEoG99BBcwv6lr3k0",
-  authDomain: "platzi-square-1546451411606.firebaseapp.com",
-  databaseURL: "https://platzi-square-1546451411606.firebaseio.com",
-  projectId: "platzi-square-1546451411606",
-  storageBucket: "platzi-square-1546451411606.appspot.com",
-  messagingSenderId: "1059538345571"
+  apiKey: 'AIzaSyDaTOC9fCCpfZ5nyXLEoG99BBcwv6lr3k0',
+  authDomain: 'platzi-square-1546451411606.firebaseapp.com',
+  databaseURL: 'https://platzi-square-1546451411606.firebaseio.com',
+  projectId: 'platzi-square-1546451411606',
+  storageBucket: 'platzi-square-1546451411606.appspot.com',
+  messagingSenderId: '1059538345571'
 };
 
 @NgModule({
