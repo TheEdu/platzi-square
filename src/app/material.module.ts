@@ -7,7 +7,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule
 } from '@angular/material';
 
 
@@ -19,7 +20,8 @@ const modules = [
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
@@ -62,7 +63,8 @@ const firebase =  {
     Routing,
     AngularFireModule.initializeApp(firebase, 'platzi-square'), // imports firebase/app needed for everything
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
   ],
   providers: [
     LugaresService

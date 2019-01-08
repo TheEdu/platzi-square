@@ -1,9 +1,13 @@
 <mat-card class="example-card">
     <mat-card-header>
-            <mat-card-title> <b> Crear Lugar </b> </mat-card-title>
+            <mat-card-title> <h2> Crear Lugar </h2> </mat-card-title>
     </mat-card-header>
+
     <mat-card-content>
         <form action="">
+
+            <span> <b> Información General </b> </span>
+            <mat-divider></mat-divider>
             
             <div class="example-container">
                 <mat-form-field>
@@ -34,6 +38,27 @@
             <div class="example-container">
                 <mat-form-field>
                     <input matInput placeholder="Plan" [(ngModel)]="place.plan" name="plan">
+                </mat-form-field>
+            </div>
+
+            <span> <b> Dirección </b> </span>
+            <mat-divider></mat-divider>
+
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Calle" [(ngModel)]="place.street" name="street">
+                </mat-form-field>
+            </div>
+
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Ciudad" [(ngModel)]="place.city" name="city">
+                </mat-form-field>
+            </div>
+
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="País" [(ngModel)]="place.country" name="country">
                 </mat-form-field>
             </div>
 

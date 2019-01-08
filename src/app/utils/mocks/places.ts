@@ -7,7 +7,26 @@ export class Place {
     distance: number;
     visits: number;
     plan: string;
-    constructor(id: number, name: string, description: string, active: boolean = true, closeness: object, distance: number = 1, plan: string = 'sin pagar') {
+    street: string;
+    city: string;
+    country: string;
+    lat: number;
+    lng: number;
+
+    constructor (
+      id: number, 
+      name: string, 
+      description: string, 
+      active: boolean = true, 
+      closeness: object, 
+      distance: number = 1, 
+      plan: string = 'sin pagar',
+      street: string = 'sin calle',
+      city: string = 'sin ciudad',
+      country: string = 'sin country',
+      lat: number = 1.0,
+      lng: number = 1.0
+    ) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -16,6 +35,11 @@ export class Place {
         this.distance = distance;
         this.plan = plan;
         this.visits = 0;
+        this.street = street,
+        this.city = city,
+        this.country = country,
+        this.lat = lat,
+        this.lng = lng
     }
 }
 
