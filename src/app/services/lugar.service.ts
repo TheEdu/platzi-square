@@ -12,7 +12,6 @@ export class LugaresService {
 
     public getLugares() {
         return this.afDB.list('places/').valueChanges();
-        // return this.places;
     }
 
     public getClosenessTypes() {
@@ -21,7 +20,6 @@ export class LugaresService {
 
     public buscarLugar( id ) {
         return this.afDB.object(`places/${+id}`).valueChanges();
-        // return this.places.find( p => p.id === +id ) || {};
     }
 
     public buscarClosenessType( id ) {
