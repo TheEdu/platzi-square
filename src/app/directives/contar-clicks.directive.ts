@@ -14,7 +14,7 @@ export class ContarClicksDirective {
   onClick(btn) {
     console.log('button', btn, 'number of clicks:', this.numberOfClicks++);
     console.log(this.opacity);
-    this.opacity =  this.opacity >= 1.0 ? .5 : this.opacity + .1;
+    this.opacity =  this.opacity >= 1.0 ? .6 : this.opacity + .1;
   }
 
 }
