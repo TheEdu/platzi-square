@@ -9,8 +9,9 @@ import { LugaresService } from '../../../services/lugar.service';
 export class LugarListComponent {
   title = 'Platzi Square';
   places: any[];
-  lat = -35.675147;
-  lng = -71.542969;
+  lat = 51.678418;
+  lng = 7.809007;
+  zoom = 18;
 
   constructor( private lugaresService: LugaresService ) {
     lugaresService.getLugares()
