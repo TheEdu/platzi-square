@@ -9,17 +9,23 @@ import { AutorizacionService } from './services/autorizacion.service';
 export class AppComponent {
   title = 'Platzi Square';
   loggedIn = false;
+  email: string;
 
   constructor(private autorizacionService:AutorizacionService){
     this.autorizacionService.isLogged()
         .subscribe((result)=>{
           if(result && result.uid){
             this.loggedIn = true;
+            this.email = autorizacionService.getEmail();
           }else{
             this.loggedIn = false;
           }
         }, (error)=>{
           this.loggedIn = false;
         })
+  }
+
+  logout(){
+    this.autorizacionService.logout();
   }
 }

@@ -18,6 +18,10 @@
       <li routerLinkActive="li-active" routerLink="/signup" *ngIf="!loggedIn">
           <span class="menu-span pl-5 pr-5">Register</span>
       </li>
+      <li *ngIf="loggedIn">
+          <span class="menu-span pl-5 pr-5"> {{ email }} </span>
+          <span class="menu-span pl-5 pr-5" (click)="logout()">Logout</span>
+      </li>
     </ul>
   </mat-toolbar-row>
 </mat-toolbar>
