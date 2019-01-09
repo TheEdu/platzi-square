@@ -18,6 +18,8 @@ import { LugarListComponent } from './components/lugares/lugar-list/lugar-list.c
 import { LugarDetailComponent } from './components/lugares/lugar-detail/lugar-detail.component';
 import { LugarCrearComponent } from './components/lugares/lugar-crear/lugar-crear.component';
 import { EjercicioDirectivasComponent } from './components/ejercicios/ejercicio-directivas.component';
+import { AuthSigninComponent } from './components/auth/auth-signin/auth-signin.component';
+import { AuthSignupComponent } from './components/auth/auth-signup/auth-signup.component';
 
 // Routing
 import { Routing } from './app.routing';
@@ -25,12 +27,12 @@ import { ContactScreenComponent } from './components/contactos/contact-screen.co
 
 // Services
 import { LugaresService } from './services/lugar.service';
+import { AutorizacionService } from './services/autorizacion.service';
 
-// FireBae
+// FireBase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 
 const firebase =  {
   apiKey: 'AIzaSyDaTOC9fCCpfZ5nyXLEoG99BBcwv6lr3k0',
@@ -50,7 +52,9 @@ const firebase =  {
     LugarDetailComponent,
     EjercicioDirectivasComponent,
     ContactScreenComponent,
-    LugarCrearComponent
+    LugarCrearComponent,
+    AuthSigninComponent,
+    AuthSignupComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,8 @@ const firebase =  {
     HttpClientModule
   ],
   providers: [
-    LugaresService
+    LugaresService,
+    AutorizacionService
   ],
   bootstrap: [AppComponent]
 })

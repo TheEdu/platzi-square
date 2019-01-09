@@ -4,6 +4,8 @@ import { LugarDetailComponent } from './components/lugares/lugar-detail/lugar-de
 import { LugarCrearComponent } from './components/lugares/lugar-crear/lugar-crear.component';
 import { EjercicioDirectivasComponent } from './components/ejercicios/ejercicio-directivas.component';
 import { ContactScreenComponent } from './components/contactos/contact-screen.component';
+import { AuthSigninComponent } from './components/auth/auth-signin/auth-signin.component';
+import { AuthSignupComponent } from './components/auth/auth-signup/auth-signup.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: LugarListComponent, pathMatch: 'full' },
@@ -11,7 +13,9 @@ const APP_ROUTES: Routes = [
     { path: 'ejercicio/directivas', component: EjercicioDirectivasComponent },
     { path: 'contacto', component: ContactScreenComponent },
     { path: 'crear', component: LugarCrearComponent },
-    { path: 'editar/:id', component: LugarCrearComponent }
+    { path: 'editar/:id', component: LugarCrearComponent },
+    { path: 'signin', component: AuthSigninComponent },
+    { path: 'signup', component: AuthSignupComponent }
 ];
 
 export const Routing = RouterModule.forRoot(APP_ROUTES);
