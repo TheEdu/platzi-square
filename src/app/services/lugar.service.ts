@@ -8,7 +8,7 @@ export class LugaresService {
     places: any[] = places;
     closenessTypes: any[] = closenessTypes;
 
-    constructor(private afDB:AngularFireDatabase, private http: HttpClient){}
+    constructor(private afDB: AngularFireDatabase, private http: HttpClient) {}
 
     public getLugares() {
         return this.afDB.list('places/').valueChanges();
@@ -18,11 +18,11 @@ export class LugaresService {
         return this.closenessTypes;
     }
 
-    public buscarLugar( id ) {
+    public buscarLugar(id) {
         return this.afDB.object(`places/${+id}`).valueChanges();
     }
 
-    public buscarClosenessType( id ) {
+    public buscarClosenessType(id) {
         return this.closenessTypes.find( c => c.id === +id ) || {};
     }
 
@@ -30,11 +30,11 @@ export class LugaresService {
         const id = place.id ? +place.id : +Date.now();
         const p = new Place(
             id,
-            place.name,  
-            place.description, 
-            true, 
+            place.name,
+            place.description,
+            true,
             this.buscarClosenessType(place.closeness),
-            place.distance, 
+            place.distance,
             place.plan,
             place.street,
             place.city,
@@ -47,8 +47,8 @@ export class LugaresService {
         return this.afDB.object(`places/${p.id}`).valueChanges();
     }
 
-    public obtenerGeoData(direccion){
+    public obtenerGeoData(direccion: any) {
         return this.http
-        .get('https://maps.googleapis.com/maps/api/geocode/json?address='+ direccion + '&key=AIzaSyBGhvrQh2edYQi7AXdDYCA71Lb_YehPXTk');
+        .get('https://maps.googleapis.com/maps/api/geocode/json?address=' + direccion + '&key=AIzaSyBGhvrQh2edYQi7AXdDYCA71Lb_YehPXTk');
     }
 }
