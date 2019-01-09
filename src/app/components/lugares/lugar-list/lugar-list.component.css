@@ -3,9 +3,14 @@ agm-map {
 }
 
 .example-card {
-    max-width: 400px;
+    max-width: 500px;
     margin: auto;
     margin-top: 30px;
+}
+
+.card-container {
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .cursor-pointer:hover {
