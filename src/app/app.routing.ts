@@ -6,13 +6,14 @@ import { EjercicioDirectivasComponent } from './components/ejercicios/ejercicio-
 import { ContactScreenComponent } from './components/contactos/contact-screen.component';
 import { AuthSigninComponent } from './components/auth/auth-signin/auth-signin.component';
 import { AuthSignupComponent } from './components/auth/auth-signup/auth-signup.component';
+import { MyGuard } from './services/my-guard.service';
 
 const APP_ROUTES: Routes = [
     { path: '', component: LugarListComponent, pathMatch: 'full' },
     { path: 'detalle/:id', component: LugarDetailComponent },
     { path: 'ejercicio/directivas', component: EjercicioDirectivasComponent },
     { path: 'contacto', component: ContactScreenComponent },
-    { path: 'crear', component: LugarCrearComponent },
+    { path: 'crear', component: LugarCrearComponent, canActivate:[MyGuard]},
     { path: 'editar/:id', component: LugarCrearComponent },
     { path: 'signin', component: AuthSigninComponent },
     { path: 'signup', component: AuthSignupComponent }

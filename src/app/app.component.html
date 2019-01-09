@@ -12,10 +12,10 @@
       <li routerLinkActive="li-active" routerLink="/contacto">
           <span class="menu-span pl-5 pr-5">Contacto</span>
       </li>
-      <li routerLinkActive="li-active" routerLink="/signin">
+      <li routerLinkActive="li-active" routerLink="/signin" *ngIf="!loggedIn">
           <span class="menu-span pl-5 pr-5">Login</span>
       </li>
-      <li routerLinkActive="li-active" routerLink="/signup">
+      <li routerLinkActive="li-active" routerLink="/signup" *ngIf="!loggedIn">
           <span class="menu-span pl-5 pr-5">Register</span>
       </li>
     </ul>

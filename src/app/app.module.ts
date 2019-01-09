@@ -28,6 +28,7 @@ import { ContactScreenComponent } from './components/contactos/contact-screen.co
 // Services
 import { LugaresService } from './services/lugar.service';
 import { AutorizacionService } from './services/autorizacion.service';
+import { MyGuard } from './services/my-guard.service';
 
 // FireBase
 import { AngularFireModule } from '@angular/fire';
@@ -72,7 +73,8 @@ const firebase =  {
   ],
   providers: [
     LugaresService,
-    AutorizacionService
+    AutorizacionService,
+    MyGuard
   ],
   bootstrap: [AppComponent]
 })
