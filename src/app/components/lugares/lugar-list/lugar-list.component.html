@@ -29,6 +29,7 @@
                             <span *ngSwitchCase="1" [ngStyle]="{'color': 'green'}"> {{ place.closeness.text }} </span>
                             <span *ngSwitchCase="2" [ngStyle]="{'color': 'black'}"> {{ place.closeness.text }} </span>
                             <span *ngSwitchCase="3" [ngStyle]="{'color': 'red'}">   {{ place.closeness.text }} </span>
+                            <span class="space-x"> {{place.id |date:"dd-MM-yyyy"}} </span>
                             <span> &nbsp;--> </span>
                             <span class="space-x">  <a routerLink = "/detalle/{{place.id}}"> Ver </a> </span>
                             <span class="space-x">  <a routerLink = "/editar/{{place.id}}"> Editar </a> </span>
