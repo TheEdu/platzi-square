@@ -10,6 +10,17 @@
             <mat-divider></mat-divider>
 
             <input [(ngModel)]="place.id" name="id" hidden>
+
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="searchField" [formControl]="searchField" name="searchField">
+                </mat-form-field>
+                <ul>
+					<li *ngFor="let result of results$ | async">
+                        {{result}}
+                    </li>
+				</ul>
+            </div>
             
             <div class="example-container">
                 <mat-form-field>
